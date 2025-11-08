@@ -28,32 +28,59 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    // --- 2. Simulação de Envio de Formulário de Contato ---
+   // --- 2. Envio do Formulário de Contato com AJAX (FormSubmit) ---
     const contactForm = document.getElementById('contact-form');
     const formMessage = document.getElementById('form-message');
 
     contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
+        e.preventDefault(); // Impedimos o envio padrão do navegador
         
-        // Exibe mensagem de sucesso (usando classes do Bootstrap)
+        // Pegamos os dados do formulário e o 'action' (URL do FormSubmit)
+        const formData = new FormData(contactForm);
+        const action = contactForm.getAttribute('action');
+
+        // Exibimos uma mensagem de "enviando..."
         formMessage.innerHTML = `
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                Obrigado! Sua mensagem foi enviada com sucesso.
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            <div class="alert alert-info" role="alert">
+                Enviando sua mensagem...
             </div>
         `;
-        
-        // Limpa o formulário
-        contactForm.reset();
 
-        // Remove a mensagem após 5 segundos (opcional)
-        setTimeout(() => {
-            const alert = formMessage.querySelector('.alert');
-            if (alert) {
-                // Usa a API do Bootstrap para fechar o alerta
-                new bootstrap.Alert(alert).close();
+        // Usamos fetch para enviar os dados via AJAX (sem recarregar a página)
+        fetch(action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json' // Pedimos uma resposta em JSON
             }
-        }, 5000);
+        })
+        .then(response => response.json()) // Convertemos a resposta para JSON
+        .then(data => {
+            // Se o FormSubmit retornar sucesso
+            if (data.success) {
+                formMessage.innerHTML = `
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        Obrigado! Sua mensagem foi enviada com sucesso.
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                `;
+                // Limpa o formulário
+                contactForm.reset();
+            } else {
+                // Se o FormSubmit retornar um erro (ex: JSON mal formatado)
+                throw new Error('Ocorreu um erro retornado pelo servidor.');
+            }
+        })
+        .catch(error => {
+            // Se der erro na rede ou no 'catch' acima
+            console.error('Erro ao enviar formulário:', error);
+            formMessage.innerHTML = `
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    Ocorreu um erro ao enviar sua mensagem. Tente novamente mais tarde.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            `;
+        });
     });
 
 

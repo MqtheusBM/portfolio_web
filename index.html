@@ -20,14 +20,23 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <!-- Ativa o ScrollSpy do Bootstrap -->
-<body data-bs-spy="scroll" data-bs-target="#mainNavbar" data-bs-offset="100">
+<body data-bs-spy="scroll" data-bs-target="#mainNavbar" data-bs-offset="80">
 
-    <!-- ==== NAVEGAÇÃO ==== -->
+     <!-- ==== NAVEGAÇÃO ==== -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm" id="mainNavbar">
-        <div class="container">
-            <!-- Logo / Nome -->
-             <a class="navbar-brand fw-bold fs-4" href="#home">
-                <i class="bi bi-code-slash me-2"></i>Matheus
+        <div class="container-fluid">
+             <a class="navbar-brand" href="#home">
+                <div class="d-flex align-items-center">
+                    <!-- Wrapper para o círculo do ícone -->
+                    <div class="logo-icon-wrapper me-2">
+                        <i class="bi bi-code-slash"></i>
+                    </div>
+                    <!-- Wrapper para o texto (nome + subtítulo) -->
+                    <div class="d-flex flex-column">
+                        <span class="fw-bold fs-5 lh-1">Matheus</span>
+                        <span class="text-white-50 lh-1" style="font-size: 0.7rem;">Desenvolvedor Front-End</span>
+                    </div>
+                </div>
             </a>
             
             <!-- Botão Mobile -->
@@ -64,18 +73,17 @@
         <!-- ==== Seção Início (Home/Hero) ==== -->
         <section id="home" class="vh-100 d-flex align-items-center justify-content-center text-center">
             <div class="container fade-in">
-                <h1 class="display-3 fw-bold mb-3">Bem vindo ao meu universo</h1>
-                <p class="text-primary fs-4 fw-light mb-4">Desenvolvedor Web Full-Stack</p>
+                <h1 class="display-3 fw-bold mb-3 animated-gradient-text">Bem vindo ao meu universo</h1>                
+                <p class="text-primary fs-4 fw-light mb-4">Desenvolvedor Front-End</p>
                 <p class="lead text-white-50 mx-auto mb-5" style="max-width: 600px;">
-                    Eu crio soluções web modernas, responsivas e performáticas, transformando ideias em realidade digital.
+                   Apaixonado por código, focado em criar experiências fluidas para web e mobile.
                 </p>
                 <!-- Contêiner para os botões -->
                 <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
                     <a href="#projetos" class="btn btn-primary btn-lg px-4 py-2 fs-6 fw-bold text-uppercase">
                         Veja meus projetos
                     </a>
-                    <!-- Novo botão de currículo -->
-                    <a href="./seu-curriculo.pdf" target="_blank" class="btn btn-outline-light btn-lg px-4 py-2 fs-6 fw-bold text-uppercase">
+                    <a href="Currículo.pdf"target="_blank" class="btn btn-outline-light btn-lg px-4 py-2 fs-6 fw-bold text-uppercase">
                         <i class="bi bi-file-earmark-person me-2"></i>Ver Currículo
                     </a>
                 </div>
@@ -83,7 +91,6 @@
         </section>
 
         <!-- ==== Seção Sobre ==== -->
-        <!-- Adicionado min-vh-100 d-flex align-items-center -->
         <section id="sobre" class="py-5 min-vh-100 d-flex align-items-center">
             <div class="container" style="max-width: 900px;">
                 <div class="text-center mb-5 fade-in">
@@ -93,32 +100,22 @@
                 
                 <div class="row g-5 align-items-center fade-in">
                     <div class="col-md-6">
-                        <img src="https://placehold.co/600x600/212529/0d6efd?text=Sua+Foto" alt="Sua Foto" class="img-fluid rounded-circle shadow-lg">
+                        <img src="/img/foto perfil - Copia.jpeg" alt="Sua Foto" class="img-fluid rounded-circle shadow-lg">
                     </div>
                     <div class="col-md-6">
                         <h3 class="fw-bold mb-3">Quem sou eu?</h3>
                         <p class="text-white-50 mb-3">
-                            Sou um desenvolvedor web apaixonado por tecnologia e focado em criar experiências de usuário incríveis. Com [X] anos de experiência, trabalhei em diversos projetos, desde landing pages simples até aplicações web complexas.
+                            Me chamo Matheus, tenho atualmente 20 anos, sou natural do Pará e estou cursando Ciências da Computação na UERR. Desde meus 18 anos o destino me guiou para o mundo da programação e desde então tenho me dedicado a aprimorar minhas habilidades e expandir meu conhecimento na área de desenvolvimento web e mobile.
                         </p>
                         <p class="text-white-50 mb-4">
-                            Minha especialidade é o desenvolvimento front-end com React e Next.js, mas também tenho sólida experiência em back-end com Node.js e Express.
-                        </p>
-                        <h4 class="fw-bold fs-5 mb-3">Minhas Habilidades</h4>
-                        <div class="d-flex flex-wrap gap-2">
-                            <span class="badge bg-primary-subtle text-primary-emphasis rounded-pill px-3 py-2">JavaScript (ES6+)</span>
-                            <span class="badge bg-primary-subtle text-primary-emphasis rounded-pill px-3 py-2">React</span>
-                            <span class="badge bg-primary-subtle text-primary-emphasis rounded-pill px-3 py-2">Node.js</span>
-                            <span class="badge bg-primary-subtle text-primary-emphasis rounded-pill px-3 py-2">Bootstrap</span>
-                            <span class="badge bg-primary-subtle text-primary-emphasis rounded-pill px-3 py-2">SQL</span>
-                            <span class="badge bg-primary-subtle text-primary-emphasis rounded-pill px-3 py-2">Git</span>
-                        </div>
+                            Minha especialidade é o desenvolvimento front-end com Javascript e React, mas também tenho sólida experiência em back-end com Python e Dart na área de desenvolvimento mobile.
+                        </p>      
                     </div>
                 </div>
             </div>
         </section>
 
          <!-- ==== Nova Seção: Habilidades (Skills) ==== -->
-         <!-- Adicionado min-vh-100 d-flex align-items-center -->
          <section id="habilidades" class="py-5 bg-dark min-vh-100 d-flex align-items-center">
             <div class="container">
                 <div class="text-center mb-5 fade-in">
@@ -147,32 +144,27 @@
                         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" class="skill-logo mb-2">
                         <p class="text-white-50">React</p>
                     </div>
-                    <!-- Habilidade Node.js --><div class="col text-center skill-item fade-in" style="transition-delay: 500ms;">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="Node.js" class="skill-logo mb-2">
-                        <p class="text-white-50">Node.js</p>
-                    </div>
                     <!-- Habilidade Git --><div class="col text-center skill-item fade-in" style="transition-delay: 600ms;">
                         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git" class="skill-logo mb-2">
                         <p class="text-white-50">Git</p>
-                    </div>
-                    <!-- Habilidade Docker --><div class="col text-center skill-item fade-in" style="transition-delay: 700ms;">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker" class="skill-logo mb-2">
-                        <p class="text-white-50">Docker</p>
                     </div>
                     <!-- Habilidade PostgreSQL --><div class="col text-center skill-item fade-in" style="transition-delay: 800ms;">
                         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" class="skill-logo mb-2">
                         <p class="text-white-50">PostgreSQL</p>
                     </div>
-                    <!-- Habilidade AWS --><div class="col text-center skill-item fade-in" style="transition-delay: 900ms;">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" class="skill-logo mb-2">
-                        <p class="text-white-50">AWS</p>
+                    <!-- Habilidade Flutter --><div class="col text-center skill-item fade-in" style="transition-delay: 1000ms;">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg" alt="Flutter" class="skill-logo mb-2">
+                        <p class="text-white-50">Flutter</p>
+                    </div>
+                     <!-- Habilidade Dart --><div class="col text-center skill-item fade-in" style="transition-delay: 1100ms;">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dart/dart-original.svg" alt="Dart" class="skill-logo mb-2">
+                        <p class="text-white-50">Dart</p>
                     </div>
                 </div>
             </div>
         </section>
         
         <!-- ==== Seção Projetos ==== -->
-        <!-- Adicionado min-vh-100 d-flex align-items-center -->
         <section id="projetos" class="py-5 bg-dark min-vh-100 d-flex align-items-center">
             <div class="container">
                 <div class="text-center mb-5 fade-in">
@@ -184,13 +176,13 @@
                     <!-- Projeto 1 -->
                     <div class="col-md-6 col-lg-4 d-flex align-items-stretch">
                         <div class="card shadow-sm border-0 bg-secondary-subtle fade-in" style="transition-delay: 100ms;">
-                            <img src="https://placehold.co/600x400/343a40/0d6efd?text=Projeto+1" class="card-img-top" alt="Projeto 1">
+                            <img src="img/girassol.jpg" class="card-img-top" alt="Projeto 1">
                             <div class="card-body d-flex flex-column">
-                                <h5 class="card-title fw-bold">Nome do Projeto 1</h5>
-                                <p class="card-text text-body-secondary mb-4">Uma breve descrição do projeto, as tecnologias usadas e o que ele faz.</p>
+                                <h5 class="card-title fw-bold">Girassol</h5>
+                                <p class="card-text text-body-secondary mb-4">Baicamente um girassol animado, feito com CSS e HTML tendo como objetivo treinar a animação.</p>
                                 <div class="mt-auto">
-                                    <a href="#" class="btn btn-primary me-2"><i class="bi bi-eye-fill me-1"></i> Demo</a>
-                                    <a href="#" class="btn btn-outline-secondary"><i class="bi bi-github me-1"></i> Código</a>
+                                    <a href="https://mqtheusbm.github.io/projeto_girassol/" class="btn btn-primary me-2"><i class="bi bi-eye-fill me-1"></i> Demo</a>
+                                    <a href="https://github.com/MqtheusBM/projeto_girassol" class="btn btn-outline-secondary"><i class="bi bi-github me-1"></i> Código</a>
                                 </div>
                             </div>
                         </div>
@@ -199,13 +191,13 @@
                     <!-- Projeto 2 -->
                     <div class="col-md-6 col-lg-4 d-flex align-items-stretch">
                         <div class="card shadow-sm border-0 bg-secondary-subtle fade-in" style="transition-delay: 200ms;">
-                            <img src="https://placehold.co/600x400/343a40/0d6efd?text=Projeto+2" class="card-img-top" alt="Projeto 2">
+                            <img src="img/Ifood.jpg" class="card-img-top" alt="Projeto 2">
                             <div class="card-body d-flex flex-column">
-                                <h5 class="card-title fw-bold">Nome do Projeto 2</h5>
-                                <p class="card-text text-body-secondary mb-4">Outra descrição de projeto, talvez este use uma API ou um framework diferente.</p>
+                                <h5 class="card-title fw-bold">Ifood</h5>
+                                <p class="card-text text-body-secondary mb-4">Basicamente um site parcialmente completo de um Ifood, feito com HTML, CSS e JavaScript. Foi a primeira vez que trabalhei com o intenção de fazer uma página completa de uma web, buscando todos os detalhes possíveis</p>
                                 <div class="mt-auto">
-                                    <a href="#" class="btn btn-primary me-2"><i class="bi bi-eye-fill me-1"></i> Demo</a>
-                                    <a href="#" class="btn btn-outline-secondary"><i class="bi bi-github me-1"></i> Código</a>
+                                    <a href="https://mqtheusbm.github.io/Food-web/" class="btn btn-primary me-2"><i class="bi bi-eye-fill me-1"></i> Demo</a>
+                                    <a href="https://github.com/MqtheusBM/Food-web" class="btn btn-outline-secondary"><i class="bi bi-github me-1"></i> Código</a>
                                 </div>
                             </div>
                         </div>
@@ -214,13 +206,12 @@
                     <!-- Projeto 3 -->
                     <div class="col-md-6 col-lg-4 d-flex align-items-stretch">
                         <div class="card shadow-sm border-0 bg-secondary-subtle fade-in" style="transition-delay: 300ms;">
-                            <img src="https://placehold.co/600x400/343a40/0d6efd?text=Projeto+3" class="card-img-top" alt="Projeto 3">
+                            <img src="img/EcoTrade.jpeg" class="card-img-top" alt="Projeto 3">
                             <div class="card-body d-flex flex-column">
-                                <h5 class="card-title fw-bold">Nome do Projeto 3</h5>
-                                <p class="card-text text-body-secondary mb-4">Este pode ser um projeto back-end ou uma ferramenta de linha de comando.</p>
+                                <h5 class="card-title fw-bold">Eco Trade</h5>
+                                <p class="card-text text-body-secondary mb-4">Este foi o maior projeto que ja fiz, um sistema completo de conexão entre compradores e vendedores de produtos sustentáveis. Feito na linguagem Dart esse projeto está completo e funcional, possuindo uma API test e funcional em mobile.</p>
                                 <div class="mt-auto">
-                                    <a href="#" class="btn btn-primary me-2"><i class="bi bi-eye-fill me-1"></i> Demo</a>
-                                    <a href="#" class="btn btn-outline-secondary"><i class="bi bi-github me-1"></i> Código</a>
+                                    <a href="https://github.com/MqtheusBM/eco_trade?tab=readme-ov-file" class="btn btn-outline-secondary"><i class="bi bi-github me-1"></i> Código</a>
                                 </div>
                             </div>
                         </div>
@@ -230,30 +221,41 @@
         </section>
 
         <!-- ==== Seção Contato ==== -->
-        <!-- Adicionado min-vh-100 d-flex align-items-center -->
         <section id="contato" class="py-5 min-vh-100 d-flex align-items-center">
             <div class="container" style="max-width: 800px;">
                 <div class="text-center mb-5 fade-in">
                     <h2 class="fw-bold text-primary">Entre em Contato</h2>
-                    <p class="lead text-white-50">Tem alguma pergunta ou quer trabalhar comigo? Envie-me uma mensagem!</p>
+                    <p class="lead text-white-50">Tem alguma pergunta ou quer fazer uma proposta? Envie-me uma mensagem!</p>
                 </div>
                 
                 <!-- Mensagem de Sucesso/Erro -->
                 <div id="form-message" class="mb-4" style="min-height: 50px;"></div>
                 
-                <form id="contact-form" class="fade-in">
+                
+                <form id="contact-form" class="fade-in" action="https://formsubmit.co/mqtheus2005@gmail.com" method="POST">
+                    
+                    <!-- Configurações extras para o FormSubmit -->
+                    <input type="hidden" name="_subject" value="Nova Mensagem do Portfólio!">
+                    <input type="hidden" name="_captcha" value="false">
+                    <!-- 
+                      ATENÇÃO: 
+                      Mude 'https://SEU-SITE-AQUI.com' para o URL real do seu site 
+                      quando for publicá-lo. Isso faz o usuário voltar para a seção de contato.
+                    -->
+                    <input type="hidden" name="_next" value="https://SEU-SITE-AQUI.com/#contato">
+                    
                     <div class="row g-3">
                         <div class="col-md-6">
                             <label for="name" class="form-label">Nome</label>
-                            <input type="text" class="form-control form-control-lg" id="name" required>
+                            <input type="text" class="form-control form-control-lg" id="name" name="name" required>
                         </div>
                         <div class="col-md-6">
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control form-control-lg" id="email" required>
+                            <input type="email" class="form-control form-control-lg" id="email" name="email" required>
                         </div>
                         <div class="col-12">
                             <label for="message" class="form-label">Mensagem</label>
-                            <textarea class="form-control form-control-lg" id="message" rows="6" required></textarea>
+                            <textarea class="form-control form-control-lg" id="message" name="message" rows="6" required></textarea>
                         </div>
                         <div class="col-12 text-center">
                             <button type="submit" class="btn btn-primary btn-lg px-5 py-2 mt-3">
@@ -272,9 +274,9 @@
         <div class="container">
             <p class="text-white-50 mb-2">&copy; 2025 Matheus. Todos os direitos reservados.</p>
             <div class="d-flex justify-content-center gap-4 fs-4">
-                <a href="#" class="text-white-50" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-                <a href="#" class="text-white-50" aria-label="GitHub"><i class="bi bi-github"></i></a>
-                <a href="#" class="text-white-50" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                <a href="https://www.linkedin.com/in/mqtheus" class="text-white-50" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <a href="https://github.com/MqtheusBM" class="text-white-50" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                <a href="https://x.com/MqProgramador" class="text-white-50" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
             </div>
         </div>
     </footer>

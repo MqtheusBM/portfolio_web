@@ -1,8 +1,10 @@
 /* --- Configuração Global --- */
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #212529; /* bg-dark do Bootstrap */
-    color: #f8f9fa; /* text-light */
+    background-color: #212529;
+    /* bg-dark do Bootstrap */
+    color: #f8f9fa;
+    /* text-light */
 }
 
 /* --- Ajuste para o Navbar Fixo --- */
@@ -10,7 +12,8 @@ body {
 section {
     padding-top: 80px;
     padding-bottom: 80px;
-    overflow-x: hidden; /* Previne scroll horizontal por causa das animações */
+    overflow-x: hidden;
+    /* Previne scroll horizontal por causa das animações */
 }
 
 /* A seção home não precisa de padding-top, pois é vh-100 */
@@ -22,24 +25,28 @@ section {
 
 /* Links da Navbar */
 .navbar-nav .nav-link {
-    color: #adb5bd; /* cinza */
+    color: #adb5bd;
+    /* cinza */
     font-weight: 400;
     transition: color 0.3s ease;
 }
 
 .navbar-nav .nav-link:hover {
-    color: #f8f9fa; /* branco */
+    color: #f8f9fa;
+    /* branco */
 }
 
 /* Link ativo do ScrollSpy */
 .navbar-nav .nav-link.active {
-    color: #0d6efd; /* azul primário do Bootstrap */
+    color: #0d6efd;
+    /* azul primário do Bootstrap */
     font-weight: 600;
 }
 
 /* Cartões de Projeto (Card) em modo escuro */
 .card {
-    background-color: #343a40; /* bg-secondary */
+    background-color: #343a40;
+    /* bg-secondary */
     color: #f8f9fa;
     border: none;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -51,11 +58,13 @@ section {
 }
 
 .card-title {
-    color: #f8f9fa; /* branco */
+    color: #0b3d91;
+    /* azul escuro para nomes dos projetos */
 }
 
 .card-text {
-    color: #adb5bd; /* cinza */
+    color: #adb5bd;
+    /* cinza */
 }
 
 /* Formulário de Contato em modo escuro */
@@ -73,12 +82,14 @@ section {
 .form-control:focus {
     background-color: #495057;
     color: #f8f9fa;
-    border-color: #0d6efd; /* azul primário */
+    border-color: #0d6efd;
+    /* azul primário */
     box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
 
 .form-label {
-    color: #ced4da; /* cinza claro */
+    color: #ced4da;
+    /* cinza claro */
 }
 
 
@@ -92,4 +103,64 @@ section {
 .fade-in.is-visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* --- NOVO: Animação de Gradiente no Título --- */
+.animated-gradient-text {
+    /* Cria um fundo gradiente (usei as cores primárias do Bootstrap e um roxo) */
+    background: linear-gradient(to right, #0d6efd, #6f42c1, #0dcaf0, #0d6efd);
+    /* Define um tamanho grande para o fundo poder se mover */
+    background-size: 300% 100%;
+
+    /* Recorta o fundo para o formato do texto */
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    /* Deixa a cor do texto transparente para o fundo aparecer */
+    color: transparent;
+
+    /* Aplica a animação */
+    animation: gradient-flow 10s ease-in-out infinite;
+}
+
+/* Animação que move a posição do fundo */
+@keyframes gradient-flow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+/* --- NOVO: Círculo da Logo na Navbar --- */
+.logo-icon-wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    /* Tamanho do círculo */
+    height: 38px;
+    /* Tamanho do círculo */
+    background-color: #0d6efd;
+    /* Cor azul primária do Bootstrap */
+    color: #f8f9fa;
+    /* Cor do ícone (branco) */
+    border-radius: 50%;
+    flex-shrink: 0;
+    /* Impede que o círculo encolha */
+}
+
+/* Ajusta o tamanho do ícone dentro do círculo */
+.logo-icon-wrapper .bi-code-slash {
+    font-size: 1.1rem;
+    /* Ajuste fino do tamanho do ícone */
+    line-height: 1;
+    /* Garante alinhamento vertical */
 }
