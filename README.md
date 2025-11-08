@@ -3,6 +3,7 @@ Este é o repositório do meu portfólio pessoal, uma landing page responsiva de
 
 🚀 Demo ao Vivo
 Você pode acessar a versão ao vivo do projeto aqui:
+https://mqtheusbm.github.io/portfolio_web/ 
 
 
 ✨ Funcionalidades
@@ -63,3 +64,4 @@ GitHub: @MqtheusBM
 LinkedIn: linkedin.com/in/mqtheus
 
 Email: mqtheus2005@gmail.com
+
